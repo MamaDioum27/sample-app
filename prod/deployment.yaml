@@ -7,14 +7,14 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      app: hello-cloudbuild
+      app: sample-app
   template:
     metadata:
       labels:
-        app: hello-cloudbuild
+        app: sample-app
     spec:
       containers:
-      - name: hello-cloudbuild
-        image: gcr.io/qwiklabs-gcp-01-5bb0bc288382/sample-app:v1.0
+      - name: sample-app
+        image: gcr.io/${MY_PROJECT_ID}/sample-app:v1.0
         ports:
         - containerPort: 8080
